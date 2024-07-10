@@ -3,23 +3,26 @@ import numpy as np
 import os
 import tensorflow as tf
 
-classes = ['bellflower','common_daisy','rose','sunflower']
+classes = ['bellflower', 'common_daisy', 'rose', 'sunflower']
 
-json_file = open('/opt/render/project/src/model/model.json', 'r')
-loaded_model_json = json_file.read()
-json_file.close()
+with open('/opt/render/project/src/model/model.json', 'r') as r:
+  model_json = r.read()
+
+# loaded_model_json = model_json.read()
+# json_file.close()
 print('JSON model loaded from disk!')
-loaded_model = model_from_json(loaded_model_json)
-loaded_model.load_weights("/opt/render/project/src/model/cnn_weights.best.weights.h5")
+loaded_model = model_from_json(model_json)
+loaded_model.load_weights(
+    "/opt/render/project/src/model/cnn_weights.best.weights.h5")
 print("Loaded weights from disk!")
 
 
 def predict_image(img_path):
   img = tf.keras.utils.load_img(img_path, target_size=(224, 224))
-  img = img.resize((224,224))
+  img = img.resize((224, 224))
   img = np.array(img)
-  img = img.reshape(1,224,224,3)
-  img = img/255.0
+  img = img.reshape(1, 224, 224, 3)
+  img = img / 255.0
   predicted = loaded_model.predict(img)
 
   print(predicted)
@@ -29,5 +32,3 @@ def predict_image(img_path):
   print(classes[predictedClass])
 
   return classes[predictedClass]
-
-  
