@@ -1,0 +1,9 @@
+Flask==3.0.3
+gdown==5.2.0
+keras==3.4.1
+Markdown==3.6
+MarkupSafe==2.1.5
+matplotlib-inline==0.1.7
+numpy==1.26.4
+tensorflow==2.16.2
+
