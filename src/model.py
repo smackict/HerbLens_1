@@ -7,7 +7,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 classes = ['bellflower', 'common_daisy', 'rose', 'sunflower']
 
-with open('model.json', 'r') as r:
+with open('/opt/render/project/src/src/model/model.json', 'r') as r:
   model_json = r.read()
 
 # loaded_model_json = model_json.read()
@@ -15,7 +15,7 @@ with open('model.json', 'r') as r:
 print('JSON model loaded from disk!')
 loaded_model = model_from_json(model_json)
 loaded_model.load_weights(
-    "cnn_weights.best.weights.h5")
+    "/opt/render/project/src/src/model/cnn_weights.best.weights.h5")
 print("Loaded weights from disk!")
 
 
