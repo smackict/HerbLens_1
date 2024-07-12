@@ -17,6 +17,7 @@ with open('/opt/render/project/src/src/model/model.json', 'r') as r:
 # json_file.close()
 print('JSON model loaded from disk!')
 loaded_model = model_from_json(model_json)
+print("Loaded model as json...")
 
 loaded_model.load_weights(
     "/opt/render/project/src/src/model/cnn_weights.best.weights.h5")
