@@ -2,6 +2,8 @@ from tensorflow.keras.models import model_from_json
 import numpy as np
 import os
 import tensorflow as tf
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 classes = ['bellflower', 'common_daisy', 'rose', 'sunflower']
 
