@@ -8,15 +8,15 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 classes = ['bellflower', 'common_daisy', 'rose', 'sunflower']
 
-loaded_model = keras.models.load_model("/opt/render/project/src/src/model/flowers_model.keras")
+# loaded_model = keras.models.load_model("/opt/render/project/src/src/model/flowers_model.keras")
 
-# with open('/opt/render/project/src/src/model/model.json', 'r') as r:
-#   model_json = r.read()
+with open('/opt/render/project/src/src/model/model.json', 'r') as r:
+  model_json = r.read()
 
-# # loaded_model_json = model_json.read()
-# # json_file.close()
-# print('JSON model loaded from disk!')
-# loaded_model = model_from_json(model_json)
+loaded_model_json = model_json.read()
+json_file.close()
+print('JSON model loaded from disk!')
+loaded_model = model_from_json(model_json)
 
 loaded_model.load_weights(
     "/opt/render/project/src/src/model/cnn_weights.best.weights.h5")
