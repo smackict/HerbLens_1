@@ -6,4 +6,4 @@ MarkupSafe==2.1.5
 matplotlib-inline==0.1.7
 numpy==1.26.4
 tensorflow==2.16.2
-
+tensorrt==10.2.0
