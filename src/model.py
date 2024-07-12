@@ -13,8 +13,8 @@ classes = ['bellflower', 'common_daisy', 'rose', 'sunflower']
 with open('/opt/render/project/src/src/model/model.json', 'r') as r:
   model_json = r.read()
 
-loaded_model_json = model_json.read()
-json_file.close()
+# loaded_model_json = model_json.read()
+# json_file.close()
 print('JSON model loaded from disk!')
 loaded_model = model_from_json(model_json)
 
